@@ -1,6 +1,6 @@
 # BsTree
 
-TODO: Write a gem description
+An implementation of binary tree, just 4 fun :)
 
 ## Installation
 
@@ -18,7 +18,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+tree root element:  
+
+		@root = BsTree::Node.new(5)
+
+and add node:
+	
+		@root.insert(10)
+
+or
+	
+		[1, 7, 3, 10, 8].each{|x| @root.insert x }
+
+># 	  5
+#   2	   7
+# 1  3 	 	10
+# 			 8
+
+DLR traval:
+
+	BsTree::Tree.dlr_traval(@root)
+
+LRD traval:
+
+	BsTree::Tree.lrd_traval(@root)
 
 ## Contributing
 
