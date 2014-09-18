@@ -30,6 +30,8 @@ or
 	
 		[1, 7, 3, 10, 8].each{|x| @root.insert x }
 
+tree sketch
+
 	 	    5
 	   2	   7
 	 1  3 	 	 10
