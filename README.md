@@ -32,10 +32,10 @@ or
 
 tree sketch
 
-	 	    5
-	   2	   7
-	 1  3 	 	 10
-	 			   8
+	 	 5
+	   2    7
+	 1  3     10
+	        8
 
 DLR traval:
 
