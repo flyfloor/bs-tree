@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = BsTree::VERSION
   spec.authors       = ["jerryshew"]
   spec.email         = ["jerryshew@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{"Binary search tree"}
+  spec.description   = %q{Binary search tree implementation}
   spec.homepage      = ""
   spec.license       = "MIT"
 
