@@ -6,12 +6,8 @@ class BsTree::Tree
     else
       raise "#{type} kind of traval does not exist"
     end
-  end
-
-  def self.sequnce
     @@sequnce
   end
-
 
   private
     #DLR traval 

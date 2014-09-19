@@ -34,18 +34,16 @@ describe BsTree::Node do
   describe BsTree::Tree do
 
     it "should be DLR traval" do
-      described_class.traval(@root)
       # same condition, the expectation will be the same
       described_class.traval(@root)
       # expect array exactly equal
-      expect(described_class.sequnce).to eq([5, 2, 1, 3, 7, 10, 8])
+      expect(described_class.traval(@root)).to eq([5, 2, 1, 3, 7, 10, 8])
     end   
 
 
     it "should be LRD traval" do
-      described_class.traval(:lrd, @root)
       # binding.pry
-      expect(described_class.sequnce).to eq([1, 3, 2, 8, 10, 7, 5]) 
+      expect(described_class.traval(:lrd, @root)).to eq([1, 3, 2, 8, 10, 7, 5]) 
     end
   end
 end
