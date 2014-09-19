@@ -1,5 +1,4 @@
 require 'pry'
-
 describe BsTree::Node do
   # all initialize
   before(:each) do 
@@ -9,13 +8,13 @@ describe BsTree::Node do
     # insert node with same value
     @root.insert(10)
   end
+  
   # tree sketch
   #     5
   #   2    7
   # 1  3    10
   #        8
   # 
-
 
   it "should return the node value" do
     expect(@root.value).to eq 5
