@@ -39,11 +39,19 @@ tree sketch
 
 DLR traval:
 
-	BsTree::Tree.traval(:dlr, @root)
+	BsTree::Node.traval(:dlr, @root)
 
 LRD traval:
 
-	BsTree::Tree.traval(:lrd, @root)
+	BsTree::Node.traval(:lrd, @root)
+
+LDR traval:
+
+	BsTree::Node.traval(:ldr, @root)
+
+level traval:
+
+	BsTree::Node.traval(:level, @root)
 
 ## Contributing
 
