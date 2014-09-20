@@ -6,7 +6,7 @@ class BsTree::Node
     @value = value
   end
 
-  def insert val
+  def insert val  
     if value < val then insert_right val
     elsif value > val then insert_left val
     else
@@ -64,13 +64,13 @@ class BsTree::Node
 
     #level travel 
     def self.level root
-      array = [] << root
-      while !array.empty?
-        node = array.shift
+      slice = [] << root
+      while !slice.empty?
+        node = slice.shift
         @@sequnce << node.value
         # under level travel, left and right node has no difference 
-        array.push(node.left) if node.left
-        array.push(node.right) if node.right
+        slice << node.left if node.left
+        slice << node.right if node.right
       end
     end
 end
