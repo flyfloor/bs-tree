@@ -30,28 +30,24 @@ describe BsTree::Node do
     expect(@root.right.right.left.value).to eq 8
   end
 
-  describe BsTree::Tree do
-
-    it "should be DLR traval" do
-      # same condition, the expectation will be the same
-      described_class.traval(@root)
-      # expect array exactly equal
-      expect(described_class.traval(@root)).to eq([5, 2, 1, 3, 7, 10, 8])
-    end   
+  it "should support DLR travel" do
+    # same condition, the expectation will be the same
+    described_class.travel(@root)
+    # expect array exactly equal
+    expect(described_class.travel(@root)).to eq([5, 2, 1, 3, 7, 10, 8])
+  end   
 
 
-    it "should be LRD traval" do
-      # binding.pry
-      expect(described_class.traval(:lrd, @root)).to eq([1, 3, 2, 8, 10, 7, 5]) 
-    end
-
-    it "should support LDR travel" do
-      pending "LDR travel is up in the air..."
-    end
-    
-    it "should support Level Order Traverse" do
-      pending "Level Order Traverse is up in the air..."
-    end
-
+  it "should support LRD travel" do
+    expect(described_class.travel(:lrd, @root)).to eq([1, 3, 2, 8, 10, 7, 5]) 
   end
+
+  it "should support LDR travel" do
+    expect(described_class.travel(:ldr, @root)).to eq([1, 2, 3, 5, 7, 8, 10]) 
+  end
+  
+  it "should support Level Order travel" do
+    expect(described_class.travel(:level, @root)).to eq([5, 2, 7, 1, 3, 10, 8]) 
+  end
+
 end

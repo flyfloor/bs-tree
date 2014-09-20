@@ -3,17 +3,26 @@ class BsTree::Node
   attr_accessor :left, :right
 
   def initialize(value)
-    @leaf = true
     @value = value
   end
 
   def insert val
-    unless @leaf == false
-      if value < val then insert_right val
-      elsif value > val then insert_left val
+    if value < val then insert_right val
+    elsif value > val then insert_left val
+    else
+      false
+    end
+  end
+
+  def self.travel(type=:dlr, root)
+    if root.nil? then raise "no root"
+    else
+      @@sequnce = []
+      if respond_to?("#{type}".to_sym) then send("#{type}".to_sym, root)
       else
-        false
+        raise "#{type} kind of travel does not exist"
       end
+      @@sequnce
     end
   end
 
@@ -26,10 +35,42 @@ class BsTree::Node
     end
 
     def insert_right(v)
-      # binding.pry
       if right then right.insert(v)
       else
         self.right = self.class.new(v)
+      end
+    end
+
+    #DLR travel 
+    def self.dlr root
+      @@sequnce << root.value
+      send(:dlr, root.left) if root.left
+      send(:dlr, root.right) if root.right
+    end
+
+    #LRD travel 
+    def self.lrd root
+      send(:lrd, root.left) if root.left    
+      send(:lrd, root.right) if root.right
+      @@sequnce << root.value
+    end
+
+    #LDR travel
+    def self.ldr root
+      send(:ldr, root.left) if root.left    
+      @@sequnce << root.value
+      send(:ldr, root.right) if root.right
+    end
+
+    #level travel 
+    def self.level root
+      array = [] << root
+      while !array.empty?
+        node = array.shift
+        @@sequnce << node.value
+        # under level travel, left and right node has no difference 
+        array.push(node.left) if node.left
+        array.push(node.right) if node.right
       end
     end
 end
