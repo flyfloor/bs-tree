@@ -37,21 +37,12 @@ tree sketch
 	 1  3     10
 	        8
 
-DLR traval:
+Traval, support(dlr, lrd, ldr, level):
 
-	BsTree::Node.traval(:dlr, @root)
+	BsTree::Node.traval(:type, @root)
 
-LRD traval:
+type canbe ```dlr```, ```lrd```, ```ldr```, ```level```
 
-	BsTree::Node.traval(:lrd, @root)
-
-LDR traval:
-
-	BsTree::Node.traval(:ldr, @root)
-
-level traval:
-
-	BsTree::Node.traval(:level, @root)
 
 ## Contributing
 
