@@ -44,5 +44,14 @@ describe BsTree::Node do
       # binding.pry
       expect(described_class.traval(:lrd, @root)).to eq([1, 3, 2, 8, 10, 7, 5]) 
     end
+
+    it "should support LDR travel" do
+      pending "LDR travel is up in the air..."
+    end
+    
+    it "should support Level Order Traverse" do
+      pending "Level Order Traverse is up in the air..."
+    end
+
   end
 end
